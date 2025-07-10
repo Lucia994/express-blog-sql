@@ -1,4 +1,5 @@
 const postslist = require("../data/postslist");
+const connection = require('../data/db');
 
 function index(req, res) {
     res.json(postslist);

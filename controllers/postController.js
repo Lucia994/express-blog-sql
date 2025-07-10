@@ -2,8 +2,16 @@ const postslist = require("../data/postslist");
 const connection = require('../data/db');
 
 function index(req, res) {
-    res.json(postslist);
+    // res.json(postslist);
+    // prepariamo la query
+    const sql = 'SELECT * FROM posts';
+    // eseguiamo la query!
+    connection.query(sql, (err, results) => {
+        if (err) return res.status(500).json({ error: 'Database query failed' });
+        res.json(results);
+    });
 }
+
 
 function show(req, res) {
     const id = parseInt(req.params.id)
@@ -41,18 +49,18 @@ function store(req, res) {
 }
 function update(req, res) {
     const id = parseInt(req.params.id)
-    const post = postslist.find( post => post.id === id)
-    if(!post){
+    const post = postslist.find(post => post.id === id)
+    if (!post) {
         return res.status(404).json({
-            erro:true,
-            message:"Not found"
+            erro: true,
+            message: "Not found"
         })
     }
-        post.title= req.body.title
-        post.content= req.body.content
-        post.img= req.body.img
-        post.tags= req.body.tags
-    
+    post.title = req.body.title
+    post.content = req.body.content
+    post.img = req.body.img
+    post.tags = req.body.tags
+
     // res.send(`You want to update post with id:${id}`)
 }
 function destroy(req, res) {

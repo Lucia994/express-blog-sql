@@ -5,7 +5,7 @@ const postslist = [
         id: 1,
         title: "Ciambellone",
         content: "Sarà che una volta le cose erano più semplici, ma erano anche molto buone. Come le crostate, i biscotti o il ciambellone che la nonna preparava anche all'ultimo sapendo che sareste passati per la merenda: uova, zucchero e farina. Niente di più basic ma che tra le sue mani, mescolando e infornando, diventava una delle prelibatezze per accompagnare il succo di frutta al pomeriggio o il latte e caffè al mattino. Ecco la nostra ricetta del ciambellone a quale atmosfera si ispira, quella di casa e genuinità: con una manciata di scorze di limone o di arancia e una spolverata di zucchero a velo renderete questa soffice delizia profumata e invitante. E per una volta sarà la nonna a farvi i complimenti per aver preparato un morbido ciambellone, così buono che non passa mai di moda!",
-        img: `http://localhost:${port}/images/ciambellone.jpeg`,
+        image: `http://localhost:${port}/images/ciambellone.jpeg`,
         tags: ["Dolci", "Torte", "Ricette vegetariane", "Ricette al forno"]
 
     },
@@ -17,7 +17,7 @@ const postslist = [
               Cracker di lupini
               Cracker allo zafferano
               Cracker ai semi`,
-        img: `http://localhost:${port}/images/cracker_barbabietola.jpeg`,
+        image: `http://localhost:${port}/images/cracker_barbabietola.jpeg`,
         tags: ["Antipasti", "Ricette vegetariane", "Ricette al forno"]
 
     },
@@ -25,7 +25,7 @@ const postslist = [
         id: 3,
         title: "Pane fritto dolce",
         content: "`Il pane fritto dolce è la versione più antica dell'odierno french toast! Una deliziosa ricetta antispreco che le nonne preparavano ai bambini per merenda, utilizzando gli ingredienti che si avevano sempre a disposizione in casa: pane raffermo, uova, latte e zucchero, che noi abbiamo deciso di aromatizzare con un pizzico di cannella. Facile e veloce da realizzare, il pane fritto dolce vi riporterà con la mente ai sapori dell'infanzia… gustatelo da solo o accompagnatelo con frutta fresca e yogurt per uno spuntino tanto goloso quanto genuino!`",
-        img: `http://localhost:${port}/images/pane_fritto_dolce.jpeg`,
+        image: `http://localhost:${port}/images/pane_fritto_dolce.jpeg`,
         tags: ["Dolci", "Dolci veloci", "Ricette veloci", "Ricette vegetariane"]
 
     },
@@ -36,7 +36,7 @@ const postslist = [
             Pasta con barbabietola e pecorino
             Gnocchi di barbabietola
             Tagliatelle alla barbabietola con asparagi`,
-        img: `http://localhost:${port}/images/pasta_barbabietola.jpeg`,
+        image: `http://localhost:${port}/images/pasta_barbabietola.jpeg`,
         tags: ["Primi piatti", "Ricette vegetariane"]
 
     },
@@ -44,7 +44,7 @@ const postslist = [
         id: 5,
         title: "Torta paesana",
         content:`La torta paesana è un dolce di origine lombarda e precisamente della Brianza, la zona compresa tra la provincia a nord di Milano e il lago di Lecco-Como. E' un dolce di origine contadina, dalle infinite varianti, ma realizzata principalmente con pane raffermo bagnato nel latte. E' infatti conosciuta anche come torta di pane o, in dialetto locale, “michelacc” ovvero mica e lac (pane e latte). A seconda dei gusti e delle disponibilità del momento, al pane ammollato ogni famiglia univa ingredienti diversi, chi l'uvetta o chi i pinoli ad esempio. Noi vi presentiamo la nostra versione con l'aggiunta di cacao e amaretti: perfetta da gustare per una merenda dal sapore rustico, la torta paesana è un perfetto dolce di recupero quando si ha del pane avanzato… ed è ancora più buona il giorno dopo!`,
-        img: `http://localhost:${port}/images/torta_paesana.jpeg`,
+        image: `http://localhost:${port}/images/torta_paesana.jpeg`,
         tags: ["Dolci", "Dolci al cioccolato", "Torte", "Ricette vegetariane", "Ricette al forno"]
 
     }

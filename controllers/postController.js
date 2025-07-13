@@ -25,7 +25,7 @@ function show(req, res) {
     // }
 
     // res.json(post)
-    
+
     const sql = 'SELECT * FROM posts WHERE id = ?';
     connection.query(sql, [id], (err, results) => {
         if (err) return res.status(500).json({ error: 'Database query failed' });
@@ -38,22 +38,30 @@ function show(req, res) {
 
 function store(req, res) {
     console.log(req.body, "This is the req.body");
-    //Create an id for the current post object
-    const postId = postslist[postslist.length - 1].id + 1
-    console.log(postId);
-    //construct the object literal taking the data from the req.body
-    const newPostObj = {
 
-        title: req.body.title,
-        content: req.body.content,
-        img: req.body.img,
-        tags: req.body.tags
-    }
+    const {title, content, image} = req.body
+    const sql = 'INSERT INTO posts (title, content, image) VALUES (?, ?, ?)';
+    connection.query (sql, [title,content,image], (err, results) =>{
+         if (err) return res.status(500).json({ error: 'Failed to insert post' });
+         res.status(201).json({id: results.insertId})
+        
+    })
+    //Create an id for the current post object
+    // const postId = postslist[postslist.length - 1].id + 1
+    // console.log(postId);
+    //construct the object literal taking the data from the req.body
+    // const newPostObj = {
+
+    //     title: req.body.title,
+    //     content: req.body.content,
+    //     img: req.body.img,
+    //     tags: req.body.tags
+    // }
     //push into the posts array
-    postslist.push(newPostObj)
-    console.log(postslist);
+    // postslist.push(newPostObj)
+    // console.log(postslist);
     //provide
-    res.status(201).json(newPostObj)
+    // res.status(201).json(newPostObj)
     // res.send(`Save a new post into db`)
 
 }
@@ -76,7 +84,7 @@ function update(req, res) {
 
 function destroy(req, res) {
     const id = parseInt(req.params.id)
-    const post = postslist.find(post => post.id === id);
+    // const post = postslist.find(post => post.id === id);
     // if (!post) {
     //     res.status(404);
     //     return res.json({

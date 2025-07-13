@@ -15,20 +15,37 @@ function index(req, res) {
 
 function show(req, res) {
     const id = parseInt(req.params.id)
-    const post = postslist.find(post => post.id === id);
+    // const post = postslist.find(post => post.id === id);
 
-    if (!post) {
-        return res.json({
-            error: "Not Found",
-            message: "Post non trovato"
-        })
-    }
+    // if (!post) {
+    //     return res.json({
+    //         error: "Not Found",
+    //         message: "Post non trovato"
+    //     })
+    // }
 
-    res.json(post)
+    // res.json(post)
+
+    // const sql = `SELECT * FROM posts WHERE id = ${id}`;
+    // connection.query(sql, [id], (err, results) => {
+    //     if (err) return res.status(500).json({ error: 'Database query failed' });
+    //     if (results.length === 0) return res.status(404).json({ error: 'Post not found' });
+    //     res.j
+    // })
+
+    const sql = 'SELECT * FROM posts WHERE id = ?';
+    connection.query(sql, [id], (err, results) => {
+        if (err) return res.status(500).json({ error: 'Database query failed' });
+        if (results.length === 0) return res.status(404).json({ error: 'Post not found' });
+
+        res.json(results[0]);
+
+    });
 }
+
 function store(req, res) {
     console.log(req.body, "This is the req.body");
-    //Create an id for the current pizza object
+    //Create an id for the current post object
     const postId = postslist[postslist.length - 1].id + 1
     console.log(postId);
     //construct the object literal taking the data from the req.body
